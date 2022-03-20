@@ -6,7 +6,7 @@ import FadeIn from 'react-fade-in';
 import axios from 'axios';
 import NavbarComp from './Comps/NavbarComp'
 import {Link} from "react-router-dom";
-
+import logo from '/y.avif'
 export default function HomeScreen(props){  
  const [article, setArticle] = React.useState("")
  const [apiReturnData, setApiReturnData] = React.useState(null)
@@ -39,9 +39,21 @@ export default function HomeScreen(props){
   return(
     <div>
         <NavbarComp />
-    <div className='homeStyle' >
+    <div style={{
+    backgroundImage:`url(${logo})` ,
+        backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  height:'100%',
+  width: '100%',
+  overflow:'hidden',
+  paddingTop:'45px',
+  display:'flex',
+  flexGrow:'1',
+  flexDirection:'column'
+    }} >
   
-      <div style={{width:'50%',marginLeft:'5%'}}>
+      <div style={{width:'50%',marginLeft:'5%',marginTop:'5%'}}>
          <FadeIn delay={'100'} transitionDuration={'1200'}>
           <CardComp 
             br={'20rem'}
@@ -61,10 +73,11 @@ export default function HomeScreen(props){
       </div>
       
       <div style={{display:'flex',justifyContent:'center', alignContent:'center',flexDirection:'column',flexGrow:2,margin:'2rem',}}>
-         <FadeIn delay={'2000'} transitionDuration={'1000'}>   
+         <FadeIn delay={'1000'} transitionDuration={'800'}>   
            
         <Input 
           value={article}
+          style={{color:'white'}}
           onChange={(e)=>     {setArticle(e.target.value)}}
           placeholder={'Where we can find your article?'}
           className='inputBox' >
@@ -72,7 +85,7 @@ export default function HomeScreen(props){
       </FadeIn>
         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
           <Button
-    style={{alignSelf:'center',marginTop:'5%',backgroundColor:'#C4DEF6'}}onClick={()=>{ sendToBackend()}}>Explore
+    style={{alignSelf:'center',color:'white',marginTop:'5%',backgroundColor:'#262524'}}onClick={()=>{ sendToBackend()}}>Explore
         </Button>
         </div>
         {showResponse ? 
@@ -83,7 +96,7 @@ export default function HomeScreen(props){
       </div>
       
       <div style={{width:'50%',marginLeft:'4%'}}>
-         <FadeIn delay={'350'} transitionDuration={'1000'}>
+         <FadeIn delay={'250'} transitionDuration={'800'}>
           <CardComp 
             br={'20rem'}
             color='#7396EF' 

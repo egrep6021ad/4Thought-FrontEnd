@@ -13,7 +13,7 @@ export default function NavbarComp() {
   return (
     <Box style={{ flexGrow: 1}}>
       <AppBar position="static">
-        <Toolbar style={{backgroundColor:'#697689'}}>
+        <Toolbar style={{backgroundColor:'#262524'}}>
           <IconButton
             size="large"
             edge="start"

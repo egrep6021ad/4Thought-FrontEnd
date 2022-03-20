@@ -1,14 +1,18 @@
 import React from 'react'
 import NavbarComp from './Comps/NavbarComp'
+import logo from '/t.avif'
 export default function AboutPageScreen(){
 
   return (
     
-    <div style={{display:'flex',flexDirection:'column',alignContent:'center',height:'100vh',backgroundColor:'#C1E1C5'}}>
+    <div style={{
+     display:'flex',flexDirection:'column',alignContent:'center',height:'100vh'}}>
       <NavbarComp />
       
-      <div style={{backgroundColor:'#C1E1C5',display:'flex',flexDirection:'column',fontFamily:'Roboto',padding:'1rem'}}>
-       
+      <div style={{backgroundImage:`url(${logo})` ,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat', backgroundColor:'#C1E1C5',display:'flex',flexDirection:'column',fontFamily:'Roboto',padding:'1rem'}}>
+      <img src='/favicon.ico' />
         <h1 style={{alignSelf:'center'}}>Who We Are</h1>
         <h2 style={{textDecoration:'underline',alignSelf:'center'}}>Inspiration</h2>
 <p>Meta's challenge piqued our interest due to our interest in current political topics. We were also eager for the opportunity to use react for Meta's challenge. The things react has done for development frameworks is an inspiration in itself. </p>
